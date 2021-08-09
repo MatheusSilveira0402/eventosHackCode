@@ -1,0 +1,14 @@
+.btn-cadastro{
+    background-color: bisque;
+    color: black;
+}
+
+.btn-cadastro:hover{
+   background-color: red;
+   color: black;
+}
+.cssdiv{
+    background-image: url('../../images/linuxgamer.png');
+    height: 100vh;
+    color: aliceblue;
+}

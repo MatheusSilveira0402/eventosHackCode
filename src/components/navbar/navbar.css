@@ -1,0 +1,14 @@
+.navbar{
+    background-color: black;
+}
+.nav-item a{
+    color: #fff;
+    transition: .4s ease-in;
+}
+.nav-item:hover a{
+    color: red;
+}
+.logo{
+    width: 4%;
+    color: white;
+}

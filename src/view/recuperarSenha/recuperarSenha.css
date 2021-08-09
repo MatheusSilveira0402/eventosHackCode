@@ -1,0 +1,24 @@
+.btn-enviar{   
+    background-color: bisque;
+    transition: .4s ease-in;
+
+}
+.btn-enviar:hover{
+    background-color: red;
+}
+.form-recuperar{
+    height: 100vh;
+    background-image: url('../../images/linuxgamer.png');
+}
+.h3{
+    color: bisque;
+    transition: .4s ease-in;
+}
+
+.h3:hover{
+    color: red;
+}
+.input{
+    max-width: 650px;
+    width: 100%;
+}

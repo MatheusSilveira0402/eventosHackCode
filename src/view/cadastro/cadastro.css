@@ -1,0 +1,21 @@
+.form-cadastro{
+    align-content: center;
+    max-width: 650px;
+}
+.input-cadastro{
+    width: 290px;
+    
+}
+.btn-cadastro{
+     background-color: bisque;
+     color: black;
+}
+
+.btn-cadastro:hover{
+    background-color: peru;
+    color: black;
+}
+.hoveh1:hover{
+    color: red;
+    
+}

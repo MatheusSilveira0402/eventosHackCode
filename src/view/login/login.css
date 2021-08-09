@@ -1,0 +1,54 @@
+
+.login-content{
+    width: 100%;
+    padding: 15%;
+    margin: auto;
+    background-image: url('../../images/linuxgamer.png');
+    height: 100vh;
+    text-align: center;
+   
+}
+
+.btn-login{
+    background-color: bisque;
+    transition: .4s ease-in;
+}
+
+.btn-login:hover{
+    background-color: red;
+}
+
+.text-login{
+    color: aliceblue;
+}
+
+.text-login:hover{
+    color:red;
+}
+
+.opcoes-login a{
+    text-decoration: none;
+    color:aliceblue;
+    transition: .4s ease-in;
+}
+
+.opcoes-login a:hover{
+    text-decoration: none;
+    color:red;
+}
+
+.opcoes-login span{
+    color: red;
+    width: max-content;
+    height: max-content;
+}
+
+.col{
+    color:white;
+    transition: .4s ease-in;
+    
+}
+.col:hover{
+    color:red;
+   
+}
