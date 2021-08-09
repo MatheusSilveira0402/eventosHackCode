@@ -12,6 +12,7 @@ function Home(){
 
     return(
         <>
+        <h1>{useSelector(state => state.usuarioEmail)}</h1>
         <Navbar/>
         
 
