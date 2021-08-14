@@ -15,7 +15,7 @@ function cadastroEventos(){
     const [tipo, setTipo] = useState();
     const [detalhes, setDetalhes] = useState();
     const [data, setData] = useState();
-    const [hora, setHora] = useState();
+    const [horario, setHorario] = useState();
     const [foto, setFoto] = useState();
     const usuarioEmail = useSelector(state => state.usuarioEmail);
 
@@ -26,14 +26,16 @@ function cadastroEventos(){
 
     function cadastrarEvents(){
         setCarregando(1);
+        console.log(horario);
+        console.log(data);
         
-        storage.ref(`imagens/${foto.name }`).put(foto).then(() => {
+        storage.ref(`imagens/${foto.name}`).put(foto).then(() => {
             db.collection('eventos').add({
                 titulo: titulo,
                 tipo: tipo,
                 detalhes: detalhes, 
                 data: data,
-                hora: hora,
+                horario: horario,
                 usuario: usuarioEmail,    
                 visualizacoes: 0,
                 foto: foto.name,
@@ -43,7 +45,7 @@ function cadastroEventos(){
                 }).then(() => {
                     setMsgTipo('sucesso');
                     setCarregando(0);
-            }).catch(err =>{
+            }).catch( err =>{
                 setMsgTipo('err');
                 setCarregando(0);
             });
@@ -53,7 +55,7 @@ function cadastroEventos(){
     return(
         <>
         <Navbar/>
-        <div className="col-12 cssdiv ">
+        <div className="col-12 cssdiv">
             <div className="row">
                 <h3 className="mx-auto font-weight-bold mt-2">Novo Evento</h3>
             </div>
@@ -88,7 +90,7 @@ function cadastroEventos(){
 
                     <div className="col-6">
                         <label>Hora:</label>
-                        <input onChange={(e) => setHora(e.target.value)} type="time" className="form-control"/>
+                        <input onChange={(e) => setHorario(e.target.value)} type="time" className="form-control"/>
                     </div>
                 </div>
 
@@ -96,17 +98,18 @@ function cadastroEventos(){
                     <label>Upload do banner:</label>
                     <input onChange={(e) => setFoto(e.target.files[0])} type="file" className="form-control"/>
                 </div>
+
                 <div className="row">
                     {
-                        carregando > 0 ? <div class="spinner-border text-danger mx-auto"></div>
+                        carregando > 0 ? <div className="spinner-border text-danger mx-auto"></div>
                         : <button onClick={cadastrarEvents} type="button" className="btn btn-lg btn-block mt-3 mb-5 btn-cadastro">Publicar Evento</button>
-                    }
+                    }   
                 </div>
-                <div className="msg-login text-white text-center mt-5">
-                    {msgTipo === "sucesso" && <span><strong>WoW!</strong> Evento Publicado &#128541;</span>}
-                    {msgTipo === "err" && <span><strong>Ops!</strong> Não foi possivél publicar o evento! &#128543;</span>}
-                  
-                </div>
+                <div className="msg-login text-white text-center">
+                        {msgTipo === "sucesso" && <span><strong>WoW!</strong> Evento Publicado &#128541;</span>}
+                        {msgTipo === "err" && <span><strong>Ops!</strong> Não foi possivél publicar o evento! &#128543;</span>}
+                </div> 
+                
             </form>
         </div>
         </>
